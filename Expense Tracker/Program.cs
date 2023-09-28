@@ -6,10 +6,15 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddRazorPages()
+    .AddRazorRuntimeCompilation();
+
 //DI
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnection"))
 );
+
+Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NHaF5cXmVCf1NpR3xbf1xzZFBMYl5bR3dPIiBoS35RdUVqW3pfd3ZXRWFaWEB3");
 
 var app = builder.Build();
 
